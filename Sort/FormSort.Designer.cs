@@ -31,11 +31,14 @@
             this.radioButtonGnome = new System.Windows.Forms.RadioButton();
             this.radioButtonQuick = new System.Windows.Forms.RadioButton();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.trackBar = new System.Windows.Forms.TrackBar();
+            this.label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGenerate
             // 
-            this.buttonGenerate.Location = new System.Drawing.Point(477, 323);
+            this.buttonGenerate.Location = new System.Drawing.Point(477, 342);
             this.buttonGenerate.Name = "buttonGenerate";
             this.buttonGenerate.Size = new System.Drawing.Size(187, 39);
             this.buttonGenerate.TabIndex = 1;
@@ -58,7 +61,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(343, 27);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(445, 268);
+            this.richTextBox1.Size = new System.Drawing.Size(445, 238);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
@@ -110,7 +113,7 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(477, 380);
+            this.buttonClear.Location = new System.Drawing.Point(477, 398);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(187, 40);
             this.buttonClear.TabIndex = 8;
@@ -118,11 +121,34 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // trackBar
+            // 
+            this.trackBar.LargeChange = 32;
+            this.trackBar.Location = new System.Drawing.Point(404, 272);
+            this.trackBar.Maximum = 1024;
+            this.trackBar.Minimum = 2;
+            this.trackBar.Name = "trackBar";
+            this.trackBar.Size = new System.Drawing.Size(360, 45);
+            this.trackBar.TabIndex = 9;
+            this.trackBar.Value = 32;
+            this.trackBar.Scroll += new System.EventHandler(this.trackBar_Scroll);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(502, 320);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(143, 13);
+            this.label.TabIndex = 10;
+            this.label.Text = "Размерность массива: 32 ";
+            // 
             // FormSort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.trackBar);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.radioButtonQuick);
             this.Controls.Add(this.radioButtonGnome);
@@ -133,6 +159,7 @@
             this.Controls.Add(this.buttonGenerate);
             this.Name = "FormSort";
             this.Text = "Sort";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,6 +175,8 @@
         private System.Windows.Forms.RadioButton radioButtonGnome;
         private System.Windows.Forms.RadioButton radioButtonQuick;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.TrackBar trackBar;
+        private System.Windows.Forms.Label label;
     }
 }
 

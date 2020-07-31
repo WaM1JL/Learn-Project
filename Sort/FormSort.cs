@@ -6,9 +6,10 @@ namespace BeginerLearnProjrct {
         public FormSort() {
             InitializeComponent();
         }
-        int[] arr = new int[32];
+        int[] arr;
         char mode = '1';
         private void buttonGenerate_Click(object sender, EventArgs e) {
+            arr = new int[trackBar.Value];
             Random rnd = new Random();
             if(richTextBox1.Text != "") {
                 richTextBox1.Text += "\n\n";
@@ -57,6 +58,10 @@ namespace BeginerLearnProjrct {
 
         private void buttonClear_Click(object sender, EventArgs e) {
             richTextBox1.Text = "";
+        }
+
+        private void trackBar_Scroll(object sender, EventArgs e) {
+            label.Text = "Размерность массива: " + trackBar.Value.ToString();
         }
     }
 }
