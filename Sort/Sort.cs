@@ -52,21 +52,17 @@ namespace BeginerLearnProjrct {
             int p_right = right;
             int p_left = left + 1;
             while(p_left <= p_right) {
-                if(l == false) {
-                    if(pivot.CompareTo(arr[p_left]) > 0) {
-                        p_left++;
-                    }
-                    else {
-                        l = true;
-                    }
+                if(pivot.CompareTo(arr[p_left]) > 0) {
+                    p_left++;
                 }
-                if(r == false) {
-                    if(pivot.CompareTo(arr[p_right]) <= 0) {
-                        p_right--;
-                    }
-                    else {
-                        r = true;
-                    }
+                else {
+                    l = true;
+                }
+                if(pivot.CompareTo(arr[p_right]) <= 0) {
+                    p_right--;
+                }
+                else {
+                    r = true;
                 }
                 if(l == true && r == true) {
                     Swap(ref arr[p_left], ref arr[p_right]);
