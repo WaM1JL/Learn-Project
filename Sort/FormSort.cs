@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace BeginerLearnProjrct {
     public partial class FormSort : Form {
@@ -21,6 +22,8 @@ namespace BeginerLearnProjrct {
             }
         }
         private void buttonSort_Click(object sender, EventArgs e) {
+            Stopwatch SW = new Stopwatch(); // Создаем объект
+            SW.Start(); // Запускаем
             switch(mode) {
                 case '1':
                     Sort<int>.BubbleSort(arr);
@@ -38,6 +41,8 @@ namespace BeginerLearnProjrct {
                     Sort<int>.BubbleSort(arr);
                     break;
             }
+            SW.Stop(); //Останавливаем
+            MessageBox.Show(Convert.ToString(SW.ElapsedMilliseconds) + " " + Convert.ToString(SW.ElapsedTicks)); // Время выполнения в миллисекундах
             richTextBox1.Text += "\n\nОтсортированный массив: ";
             for(int i = 0; i < arr.Length; i++) {
                 richTextBox1.Text += arr[i].ToString() + " ";
